@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>aqissiaq space</title>
-    
-    <meta name="description" content="just musings, probably">
+    <title>{{title}}{% block subtitle %}{% endblock %}</title>
+    {% block meta %}
+    <meta name="description" content="{{description}}">
     <meta name="keywords" content="">
-    
-    <link rel="canonical" href="http://aqissiaq.space/">
+    {% endblock %}
+    <link rel="canonical" href="{{site-url}}{{uri}}">
 
     <!-- Mobile Specific Metas
          –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -19,57 +19,29 @@
 
     <!-- CSS
          –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <link href="/css/skeleton.css" rel="stylesheet" type="text/css" />
+    {% style "css/skeleton.css" %}
   </head>
   <body>
     <div class="container">
 
-          <a href="/"><h3>aqissiaq space</h3></a>
+          <a href="{{index-uri}}"><h3>{{title}}</h3></a>
       <!-- Nav-Column
            –––––––––––––––––––––––––––––––––––––––––––––––––– -->
       <div class="row">
         <div class="three columns" style="margin-top: 25%">
-          <a class="button button-primary" href="/"> Home </a>
-          <a class="button button-primary" href="/archives/"> Archives </a>
-          <a class="button button-primary" href="/feed.xml"> RSS </a>
+          <a class="button button-primary" href="{{index-uri}}"> Home </a>
+          <a class="button button-primary" href="{{archives-uri}}"> Archives </a>
+          <a class="button button-primary" href="{{rss-uri}}"> RSS </a>
         </div>
 
         <!-- Primary Page Layout
              –––––––––––––––––––––––––––––––––––––––––––––––––– -->
         <div class="nine columns" style="margin-top: 25%">
-                
-<div id="post">
-    <div class="post-header">
-    <div id="post-meta" class="row">
-        <div class="col-lg-6">June 24, 2021</div>
-        
-    </div>
-    <h2>Test Post</h2>
-</div>
-<div>
-    
-    <h3 id="test-post">Test Post</h3><p>Please ignore</p>
-</div>
-
-<div id="post-tags">
-    <b>Tags: </b>
-    
-    <a href="/tags-output/testing/">testing</a>
-    
-</div>
-
-
-    
-
-    <div id="prev-next">
-        
-        
-    </div>
-</div>
-
+                {% block content %}
+                {% endblock %}
           <!-- Footer
                –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-          <footer style="text-align: center;">Copyright &copy; 2021 Åsmund Aqissiaq Arild Kløvstad
+          <footer style="text-align: center;">Copyright &copy; {{today|date:yyyy}} {{author}}
             <p style="text-align: center;">Powered by <a href="http://cryogenweb.org">Cryogen</a></p>
             <p style="text-align: center;">Style based on <a href="http://getskeleton.com/">Skeleton</a></p>
           </footer>
@@ -79,9 +51,9 @@
   </body>
   <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-  <script src="/js/highlight.pack.js" type="application/javascript"></script>
+  {% script "js/highlight.pack.js" %}
   <script>hljs.initHighlightingOnLoad();</script>
-  
-  
+  {% if post.klipse %} {{post.klipse|safe}} {% endif %}
+  {% if page.klipse %} {{page.klipse|safe}} {% endif %}
 </body>
 </html>
