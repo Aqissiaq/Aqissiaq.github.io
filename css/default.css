@@ -2,7 +2,7 @@
   /* Colors */
   /* a pretty boring gruvbox-light */
   --first-color: #f0ece2;
-  --second-color: #c7b198;
+  --second-color: #7c6f64;
   --third-color: #282828;
   --accent-color: #3c3836;
 }
@@ -18,6 +18,10 @@ body {
   font-size: 1.6rem;
   color: var(--accent-color);
   background-color: var(--first-color);
+}
+
+body a {
+  color: var(--second-color);
 }
 
 header {
