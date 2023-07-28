@@ -12,7 +12,7 @@ I did my master thesis with [Håkon Robbestad Gylterud](https://hakon.gylterud.n
 It is about implementing a model of version control systems in Cubical Agda, and the first chapter contains a pretty friendly introduction to HoTT.
 You can read it [here](/files/cubical_hpt.pdf) and find the Agda code [here](https://github.com/Aqissiaq/hpt-experiments).
 
-Also at UiB, I participated in the seminar course INF328B in the spring of 2021. The result is a short [essay](/files/INF328B_HOPL4_essays.pdf#page=37) summarising the HOPL IV report on the history of JavaScript.
+Also at UiB, I participated in the seminar course INF328B in the spring of 2021. The result is a short [essay](/files/INF328B_HOPL4_essays.pdf#page=40) summarizing the HOPL IV report on the history of JavaScript.
 
 ### Bachelor Thesis
 My bachelor thesis is about using TLA+ to verify a concurrent hashmap algorithm.
