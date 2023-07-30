@@ -2,7 +2,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 import           Data.Monoid (mappend)
 import           Hakyll
-
+import Text.Pandoc.Options
 
 --------------------------------------------------------------------------------
 config :: Configuration
@@ -28,7 +28,7 @@ main = hakyllWith config $ do
 
     match "posts/*" $ do
         route $ setExtension "html"
-        compile $ pandocCompiler
+        compile $ pandocPostCompiler
             >>= loadAndApplyTemplate "templates/post.html"    postCtx
             >>= loadAndApplyTemplate "templates/default.html" postCtx
             >>= relativizeUrls
@@ -70,3 +70,17 @@ postCtx = mconcat
   [ modificationTimeField "date" "%B %e, %Y"
   , defaultContext
   ]
+
+pandocPostCompiler :: Compiler (Item String)
+pandocPostCompiler = pandocCompilerWith defaultHakyllReaderOptions writerOptions
+  where
+    extensions = extensionsFromList [ Ext_tex_math_dollars
+                                    , Ext_tex_math_double_backslash
+                                    , Ext_latex_macros
+                                    , Ext_footnotes
+                                    , Ext_inline_notes
+                                    , Ext_backtick_code_blocks]
+    writerOptions = defaultHakyllWriterOptions {
+      writerExtensions = extensions <> writerExtensions defaultHakyllWriterOptions ,
+      writerHTMLMathMethod = MathJax ""
+                                               }
