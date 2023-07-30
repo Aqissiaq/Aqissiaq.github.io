@@ -66,6 +66,7 @@ main = hakyllWith config $ do
 
 --------------------------------------------------------------------------------
 postCtx :: Context String
-postCtx =
-    dateField "date" "%B %e, %Y" `mappend`
-    defaultContext
+postCtx = mconcat
+  [ modificationTimeField "date" "%B %e, %Y"
+  , defaultContext
+  ]
