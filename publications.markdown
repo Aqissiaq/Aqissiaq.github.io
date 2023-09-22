@@ -4,7 +4,7 @@ title: Publications
 ### Conference Papers
  - CONCUR23: [**Compositional Correctness and Completeness for Symbolic Partial Order Reduction**](/files/2023-CONCUR-article.pdf)
    
-   In which I formalize a symbolic small step semantics in Coq and do partial order reduction to it. Also there is a neat square.
+   In which I formalize a symbolic small step semantics in Coq and do partial order reduction to it. Also there is a neat square. [(slides)](/files/2023-CONCUR-presentation.pdf)
    
 
 ### Master Thesis
