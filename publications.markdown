@@ -2,6 +2,10 @@
 title: Publications
 ---
 ### Conference Papers
+ - ICTAC23: [**Denotational Semantics for Symbolic Execution**](/files/2023-ICTAC-article.pdf)
+   
+   Co-authored with Erik Voogd. We present a simple denotational view of symbolic execution in which path conditions are partitions of the initial state space and symbolic states describe state transformers.
+   
  - CONCUR23: [**Compositional Correctness and Completeness for Symbolic Partial Order Reduction**](/files/2023-CONCUR-article.pdf)
    
    In which I formalize a symbolic small step semantics in Coq and do partial order reduction to it. Also there is a neat square. [(slides)](/files/2023-CONCUR-presentation.pdf)
